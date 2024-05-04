@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Book Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #446688;
+            margin-bottom: 10px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 80px;
+            border: 2px solid #446688;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #446688;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #446688;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #334455;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fetch Book Details</h1>
+    <form action="{% url 'book_details' %}" method="post">
+        {% csrf_token %}
+        <label for="name">Enter Book Name:</label>
+        <br>
+        <input type="text" id="name" name="name" placeholder="e.g., Harry Potter" required>
+        <br>
+        <br>
+        <br>
+        <button type="submit">Fetch Details</button>
+    </form>
+</body>
+</html>
